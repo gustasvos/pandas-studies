@@ -1,9 +1,12 @@
 import os
 import subprocess
-import pandas as pd
-import numpy as np
 
 # Create the 'data' directory if it doesn't exist
+
+# Este programa gera a estrutura das pastas e baixa os arquivos necessários para as análises
+# Útil para análises locais, para as buscas serem mais rápidas
+# Gera: data/dataset/*grafico_ano*
+#       data/tables/*tabelas_codigos*
 
 # if not os.path.exists('data'):
 #     os.makedirs('data')

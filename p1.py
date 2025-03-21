@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# apenas estudos
 
 # df = pd.DataFrame(np.random.randn(10, 4))
 # print(df)
