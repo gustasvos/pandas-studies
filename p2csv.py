@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# apenas estudos
 
 # reads the csv and creates 2 dataframes
 filename = 'data/dataset/EXP_2024_MUN.csv'
