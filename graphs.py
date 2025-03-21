@@ -34,6 +34,7 @@ mun_counts= df_mun_sp["NO_MUN"].value_counts()
 print(mun_counts)
 mun_counts = mun_counts.head(10) # top 10 (pega os 10 primeiros valores)
 
+# grafico
 plt.figure(figsize=(10, 6))
 mun_counts.plot(kind='bar', color='skyblue')
 
