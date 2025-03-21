@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 # reads the csv and creates 2 dataframes
-filename = 'data/EXP_2024_MUN.csv'
+filename = 'data/dataset/EXP_2024_MUN.csv'
 df = pd.read_csv(filename, sep=';')
 df2 = df.tail()
 df = df.head()

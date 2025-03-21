@@ -21,8 +21,6 @@ def folder_creation():
 def get_dataset(subdir):
     # Loop through the years from 2019 to 2024
     for year in range(2019, 2025):  
-        # The range is inclusive of 2019 and exclusive of 2025, so it covers 2019 to 2024
-        # Construct the URL by replacing the year value
         url = f'https://balanca.economia.gov.br/balanca/bd/comexstat-bd/mun/EXP_{year}_MUN.csv'
         
         # Extract the file name from the URL
@@ -33,9 +31,9 @@ def get_dataset(subdir):
         
         if output_file in output_file_path:
             continue
-        print(output_file_path, url)
+        # print(output_file_path, url)
         try:
-            # Run the curl command to download the file and save it in the dataset folder
+            # Run the curl command to download the file and save it in the data/dataset folder
             subprocess.run(
                 ["curl", "-o", os.path.join(PATH, subdir, output_file), url],
                 check=True
@@ -45,7 +43,7 @@ def get_dataset(subdir):
             print(f"Erro ao baixar o arquivo {output_file}: {e}")
 
 def get_tables(subdir):
-    for table in ["PAIS", "UF_MUN", "PAIS_BLOCO"]:
+    for table in ["PAIS", "UF_MUN", "PAIS_BLOCO", "NCM_SH"]:
         url = f"https://balanca.economia.gov.br/balanca/bd/tabelas/{table}.csv"
         output_file = os.path.basename(url)
         output_file_path = os.listdir(os.path.join(PATH, subdir))
@@ -62,6 +60,9 @@ def get_tables(subdir):
         except subprocess.CalledProcessError as e:
             print(f"Erro ao baixar o arquivo {output_file}: {e}")
 
+# https://balanca.economia.gov.br/balanca/bd/tabelas/PAIS.csv
+# https://balanca.economia.gov.br/balanca/bd/tabelas/UF_MUN.csv
+# https://balanca.economia.gov.br/balanca/bd/tabelas/PAIS_BLOCO.csv
 
 def main():
     folder_creation()
@@ -70,7 +71,6 @@ def main():
 
 main()
 
+file_list = os.path.join(os.path.split(__file__)[0], 'data', 'dataset')
 
-# https://balanca.economia.gov.br/balanca/bd/tabelas/PAIS.csv
-# https://balanca.economia.gov.br/balanca/bd/tabelas/UF_MUN.csv
-# https://balanca.economia.gov.br/balanca/bd/tabelas/PAIS_BLOCO.csv
+print(os.listdir(file_list))
