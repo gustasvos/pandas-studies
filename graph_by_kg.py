@@ -32,11 +32,11 @@ kg_total_por_mun = kg_total_por_mun.rename(columns={"KG_LIQUIDO": "TOTAL_KG_LIQU
 
 
 kg_total_por_mun = pd.merge(kg_total_por_mun, df_mun[['CO_MUN', 'NO_MUN']], on='NO_MUN', how='left')
-municipios_top10 = kg_total_por_mun.sort_values(by="TOTAL_KG_LIQUIDO", ascending=False).head(10)
+municipios_top10 = kg_total_por_mun.sort_values(by="TOTAL_KG_LIQUIDO", ascending=False).head(11)
 
 # grafico
 plt.figure(figsize=(12, 6))
-plt.bar(municipios_top10['NO_MUN'], municipios_top10['TOTAL_KG_LIQUIDO'], color='skyblue')
+plt.bar(municipios_top10['NO_MUN'], municipios_top10['TOTAL_KG_LIQUIDO'])
 
 # Customize the plot
 plt.title('Total por Kg Líquido por município de SP', fontsize=14)

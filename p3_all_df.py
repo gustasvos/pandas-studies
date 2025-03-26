@@ -14,12 +14,11 @@ import subprocess
 PATH = 'data'
 
 def folder_creation():
-    path = 'data'
     if not os.path.exists(os.path.join(PATH)):
-        os.makedirs(path)
+        os.makedirs(PATH)
     for subdir in ['dataset', 'tables']:
-        if not os.path.exists(os.path.join(path, subdir)):
-            os.mkdir(os.path.join(path, subdir))
+        if not os.path.exists(os.path.join(PATH, subdir)):
+            os.mkdir(os.path.join(PATH, subdir))
 
 def get_dataset(subdir):
     # Loop through the years from 2019 to 2024

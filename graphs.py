@@ -22,7 +22,6 @@ df_sh4 = pd.read_csv(sh4, sep=";", encoding="latin1")
 # municipios_top10 = kg_total_per_mun.sort_values(by="TOTAL_KG_LIQUIDO", ascending=False).head(10)
 
 
-
 # RENOMEAR PARA SER COMPATIVEL COM BASE MUN
 df_mun = df_mun.rename(columns={"CO_MUN_GEO": "CO_MUN"})
 
@@ -36,7 +35,7 @@ mun_counts = mun_counts.head(10) # top 10 (pega os 10 primeiros valores)
 
 # grafico
 plt.figure(figsize=(10, 6))
-mun_counts.plot(kind='bar', color='skyblue')
+mun_counts.plot(kind='bar')
 
 # Customize the plot
 plt.title('Quantidade de exportações por município de SP', fontsize=14)
