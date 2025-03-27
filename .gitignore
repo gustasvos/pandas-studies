@@ -1,2 +1,9 @@
 /data
 /test
+
+# ignore all dotted folders
+/**/.*/ 
+# ignore all dotted files
+/**/.*  
+# except `gitignore` :)
+!/.gitignore  
